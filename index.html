@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半日闲 · English Slow Post · May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e0d0;
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paper {
+    width: 100%;
+    max-width: 720px;
+    background: #f7f2ea;
+    box-shadow: 0 4px 24px rgba(60,40,20,0.06);
+    padding: 0;
+  }
+
+  /* each section is a scrollable block */
+  .section {
+    padding: 72px 60px 64px 60px;
+    position: relative;
+  }
+  .section + .section {
+    border-top: 1px solid #ece3d6;
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 60px; right: 60px; bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(180,160,130,0.04) 30px, rgba(180,160,130,0.04) 31px);
+    pointer-events: none;
+  }
+
+  .top-line {
+    width: 36px;
+    height: 2px;
+    background: #c4865c;
+    margin-bottom: 28px;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover-sub {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c4865c;
+    margin-bottom: 10px;
+  }
+  .cover-title {
+    font-size: 46px;
+    font-weight: 500;
+    letter-spacing: 10px;
+    color: #3d2c1b;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .cover-title-en {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #8a7a6a;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+  }
+  .cover-date {
+    font-size: 14px;
+    color: #9a8a7a;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+  }
+  .cover-quote {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #6b8f5e;
+    line-height: 1.6;
+    max-width: 80%;
+    border-top: 1px solid #dcd0c0;
+    padding-top: 30px;
+  }
+  .cover-quote .zh {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 14px;
+    font-style: normal;
+    color: #8a7a6a;
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* LABEL */
+  .section-label {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c4865c;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e5d9c8;
+    padding-bottom: 10px;
+  }
+
+  /* TITLE */
+  .block-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3d2c1b;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .block-title .en {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    display: block;
+    font-size: 18px;
+    color: #8a7a6a;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+
+  /* TEXT */
+  .body-en {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #3d2c1b;
+    margin-bottom: 28px;
+  }
+  .body-en.small {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .body-zh {
+    font-size: 14px;
+    line-height: 2.1;
+    color: #7a6a5a;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    text-align: center;
+    color: #b5c8a8;
+    font-size: 18px;
+    margin: 32px 0;
+    letter-spacing: 8px;
+  }
+
+  /* TRY SAY */
+  .try-say {
+    background: #efe8dc;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .try-say .en {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #3d2c1b;
+  }
+  .try-say .zh {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 13px;
+    color: #7a6a5a;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* WORDS */
+  .word-block {
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #ece3d6;
+  }
+  .word-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .word-head {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #6b8f5e;
+    margin-bottom: 2px;
+  }
+  .word-meta {
+    font-size: 13px;
+    color: #9a8a7a;
+    margin-bottom: 10px;
+  }
+  .word-ex {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #3d2c1b;
+    padding-left: 18px;
+    border-left: 2px solid #d5c9b8;
+    margin-bottom: 8px;
+  }
+  .word-ex .zh {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 13px;
+    color: #8a7a6a;
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* TRY THIS */
+  .try-box {
+    background: #efe8dc;
+    padding: 32px 28px;
+    margin: 16px 0;
+  }
+  .try-box .label {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c4865c;
+    margin-bottom: 12px;
+  }
+  .try-box .en {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #3d2c1b;
+    margin-bottom: 10px;
+  }
+  .try-box .zh {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #7a6a5a;
+  }
+
+  /* FOOTER */
+  .footer-section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer-quote {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #3d2c1b;
+    line-height: 1.6;
+  }
+  .footer-quote .attr {
+    font-size: 16px;
+    font-style: normal;
+    color: #9a8a7a;
+    display: block;
+    margin-top: 14px;
+  }
+  .footer-quote .zh {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 14px;
+    font-style: normal;
+    color: #8a7a6a;
+    display: block;
+    margin-top: 6px;
+  }
+  .colophon {
+    font-size: 11px;
+    color: #b0a090;
+    letter-spacing: 1px;
+    margin-top: 60px;
+  }
+
+  @media (max-width: 600px) {
+    .section { padding: 48px 28px; }
+    .cover-title { font-size: 32px; letter-spacing: 6px; }
+    .cover-title-en { font-size: 18px; margin-bottom: 36px; }
+    .cover-quote { max-width: 100%; font-size: 20px; }
+    .body-en { font-size: 16px; }
+    .section::before { left: 28px; right: 28px; }
+    .footer-quote { font-size: 22px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .paper { box-shadow: none; }
+    .section { page-break-after: always; }
+    .section::before { display: none; }
+    .cover { min-height: auto; }
+    .footer-section { min-height: auto; }
+  }
+</style>
+</head>
+<body>
+  <div class="paper">
+
+    <!-- COVER -->
+    <div class="section cover">
+      <div class="top-line"></div>
+      <div class="cover-sub">Issue 01</div>
+      <div class="cover-title">半日闲</div>
+      <div class="cover-title-en">English Slow Post</div>
+      <div class="cover-date">May 2026</div>
+      <div class="cover-quote">
+        "英语不是用来学的，<br>是用来慢慢翻的。"
+        <span class="zh">—— 每个月给你寄一封，用英文写的小信</span>
+      </div>
+    </div>
+
+    <!-- A LITTLE SOMETHING: In the Garden -->
+    <div class="section">
+      <div class="top-line"></div>
+      <div class="section-label">A Little Something</div>
+      <div class="block-title">In the Garden <span class="en">—— 花园里</span></div>
+
+      <div class="body-en">
+        This morning I walked into the garden with my tea. The tomatoes are still green, but the mint has gone wild. I picked a few leaves and put them in my cup. The sun was warm on my shoulders, and a small orange butterfly landed on the basil. I stood still and watched. It stayed for a few seconds, then flew away.
+      </div>
+      <div class="body-en small">
+        In the corner, the sunflowers are taller than me now. They follow the sun all day. I watered them slowly, one by one. The soil smelled like rain from last night. I thought: this is a good kind of slow.
+      </div>
+
+      <div class="divider">✦ ✦ ✦</div>
+
+      <div class="body-zh">
+        今早端着茶走进花园。番茄还是青的，但薄荷已经疯长了一地。摘了几片放进杯子。阳光暖暖地落在肩上，一只橙色的小蝴蝶停在罗勒上。我站着没动，看着它。它停了几秒，然后飞走了。
+      </div>
+      <div class="body-zh">
+        角落里的向日葵已经比我高了。它们一整天都追着太阳转。我一棵棵慢慢地浇水。泥土里有昨夜雨水的味道。我想：这种慢，真好。
+      </div>
+    </div>
+
+    <!-- A LITTLE SOMETHING: A Quiet Thing -->
+    <div class="section">
+      <div class="top-line"></div>
+      <div class="section-label">A Little Something</div>
+      <div class="block-title">A Quiet Thing <span class="en">—— 一件安静的事</span></div>
+
+      <div class="body-en">
+        Yesterday afternoon it rained. Not hard — just a soft rain that made everything quiet. I sat by the window with my second cup of tea. No phone, no music. Just the sound of rain on the leaves.
+      </div>
+      <div class="body-en small" style="margin-top:4px;">
+        I remembered something my grandmother used to say: "Rain is nature's way of telling us to slow down." She was right. I didn't do anything important that afternoon. And it was perfect.
+      </div>
+
+      <div class="divider">✦ ✦ ✦</div>
+
+      <div class="body-zh">
+        昨天下午下雨了。不大——只是一场让一切都安静下来的小雨。我坐在窗边喝着第二杯茶。没有手机，没有音乐。只有雨打叶子的声音。
+      </div>
+      <div class="body-zh">
+        我想起外婆以前说过的一句话："雨是大自然在告诉我们，慢一点。"她说得对。那个下午我什么重要的事都没做。但特别完美。
+      </div>
+
+      <div class="try-say">
+        <div class="en">Try saying this out loud: <em>"It was a quiet afternoon, and I enjoyed every minute of it."</em></div>
+        <span class="zh">试着轻轻念出来：那是一个安静的下午，我享受了每一分钟。</span>
+      </div>
+    </div>
+
+    <!-- WORDS I LOVE -->
+    <div class="section">
+      <div class="top-line"></div>
+      <div class="section-label">Words I Love</div>
+      <div class="block-title">三个有画面感的词 <span class="en">—— words that paint pictures</span></div>
+
+      <div class="word-block">
+        <div class="word-head">bloom</div>
+        <div class="word-meta">/bluːm/ 动词 · 开花，绽放</div>
+        <div class="word-ex">
+          "The roses are blooming in the garden."<br>
+          <span class="zh">花园里的玫瑰正在盛开。</span>
+        </div>
+        <div class="word-ex">
+          "She bloomed into a confident woman."<br>
+          <span class="zh">她绽放成了一个自信的女人。这个词可以用来形容花，也可以用来形容人。</span>
+        </div>
+      </div>
+
+      <div class="word-block">
+        <div class="word-head">cozy</div>
+        <div class="word-meta">/ˈkoʊ.zi/ 形容词 · 舒服的、温暖的、让人安心的</div>
+        <div class="word-ex">
+          "I lit a candle and made my corner of the sofa cozy."<br>
+          <span class="zh">我点了一根蜡烛，把沙发角弄得暖暖的。cozy 不只是一个词，是一种生活态度。</span>
+        </div>
+      </div>
+
+      <div class="word-block">
+        <div class="word-head">wander</div>
+        <div class="word-meta">/ˈwɑːn.dɚ/ 动词 · 漫步，漫无目的地走</div>
+        <div class="word-ex">
+          "After lunch, I wandered around the neighborhood."<br>
+          <span class="zh">午饭后，我在附近漫无目的地走了一圈。wander 和"散步"的不同，在于它没有目的地。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRY THIS -->
+    <div class="section">
+      <div class="top-line"></div>
+      <div class="section-label">Try This, If You Feel Like It</div>
+
+      <div class="try-box">
+        <div class="label">☕ 一件小事</div>
+        <div class="en">
+          "Find one thing in your home that is green. Look at it for ten seconds. Then say one sentence about it in English."
+        </div>
+        <div class="zh">
+          在家里找一件绿色的东西。看它十秒钟。然后用英文说一句话描述它。
+        </div>
+      </div>
+
+      <p class="body-zh" style="margin-top:24px;">
+        比如你看到阳台上的一盆绿萝，可以说：
+      </p>
+      <div style="font-family:'EB Garamond',Georgia,serif;font-size:17px;font-style:italic;color:#3d2c1b;padding:14px 18px;background:#efe8dc;border-radius:1px;margin:6px 0 16px 0;">
+        "This plant has big, beautiful leaves. It makes the room feel alive."
+      </div>
+      <p class="body-zh">
+        说给自己听就好。窗台上的花不会评判你。
+      </p>
+      <p class="body-zh" style="margin-top:8px;font-size:13px;color:#8a7a6a;">
+        五月的主题是绿色。试试之后你会发现：原来自己已经能说一句完整的英文了。
+      </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="section footer-section">
+      <div class="top-line"></div>
+      <div class="cover-sub" style="margin-bottom:40px;">until next time</div>
+
+      <div class="footer-quote">
+        "And then the day came,<br>when the risk to remain tight in a bud<br>was more painful than the risk it took to bloom."
+        <span class="attr">— Anaïs Nin</span>
+        <span class="zh">然后那一天到来了——<br>待在花苞里不动，比绽放本身更痛苦。</span>
+      </div>
+
+      <div class="colophon">
+        半日闲 · English Slow Post · 第 1 期 · 2026 年 5 月
+      </div>
+      <div class="colophon" style="margin-top:4px;font-size:10px;">
+        给你一个人的英语小刊物
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
